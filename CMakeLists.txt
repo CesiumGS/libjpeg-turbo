@@ -149,25 +149,25 @@ message(STATUS "${BITS}-bit build (${CPU_TYPE})")
 # INSTALL DIRECTORIES
 ###############################################################################
 
-if(WIN32)
-  if(MSVC)
-    set(CMAKE_INSTALL_DEFAULT_PREFIX "c:/${CMAKE_PROJECT_NAME}")
-  else()
-    set(CMAKE_INSTALL_DEFAULT_PREFIX "c:/${CMAKE_PROJECT_NAME}-gcc")
-  endif()
-  if(BITS EQUAL 64)
-    set(CMAKE_INSTALL_DEFAULT_PREFIX "${CMAKE_INSTALL_DEFAULT_PREFIX}64")
-  endif()
-else()
-  if(NOT CMAKE_INSTALL_DEFAULT_PREFIX)
-    set(CMAKE_INSTALL_DEFAULT_PREFIX /opt/${CMAKE_PROJECT_NAME})
-  endif()
-endif()
-if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  set(CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_DEFAULT_PREFIX}" CACHE PATH
-    "Directory into which to install ${CMAKE_PROJECT_NAME} (default: ${CMAKE_INSTALL_DEFAULT_PREFIX})"
-    FORCE)
-endif()
+#if(WIN32)
+#  if(MSVC)
+#    set(CMAKE_INSTALL_DEFAULT_PREFIX "c:/${CMAKE_PROJECT_NAME}")
+#  else()
+#    set(CMAKE_INSTALL_DEFAULT_PREFIX "c:/${CMAKE_PROJECT_NAME}-gcc")
+#  endif()
+#  if(BITS EQUAL 64)
+#    set(CMAKE_INSTALL_DEFAULT_PREFIX "${CMAKE_INSTALL_DEFAULT_PREFIX}64")
+#  endif()
+#else()
+#  if(NOT CMAKE_INSTALL_DEFAULT_PREFIX)
+#    set(CMAKE_INSTALL_DEFAULT_PREFIX /opt/${CMAKE_PROJECT_NAME})
+#  endif()
+#endif()
+#if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+#  set(CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_DEFAULT_PREFIX}" CACHE PATH
+#    "Directory into which to install ${CMAKE_PROJECT_NAME} (default: ${CMAKE_INSTALL_DEFAULT_PREFIX})"
+#    FORCE)
+#endif()
 message(STATUS "CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}")
 
 # When the prefix is /opt/${CMAKE_PROJECT_NAME}, we assume that an "official"
