@@ -9,6 +9,8 @@ if(CMAKE_EXECUTABLE_SUFFIX)
   set(CMAKE_EXECUTABLE_SUFFIX_TMP ${CMAKE_EXECUTABLE_SUFFIX})
 endif()
 
+set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+
 project(libjpeg-turbo C)
 set(VERSION 2.1.5.1)
 set(COPYRIGHT_YEAR "1991-2023")
@@ -66,7 +68,7 @@ endif()
 # complain that our install() directives for executables do not specify a
 # BUNDLE DESTINATION.  Even if CMake did not complain, building executables as
 # application bundles would break our iOS packages.)
-set(CMAKE_MACOSX_BUNDLE FALSE)
+#set(CMAKE_MACOSX_BUNDLE FALSE)
 
 get_property(GENERATOR_IS_MULTI_CONFIG GLOBAL PROPERTY
   GENERATOR_IS_MULTI_CONFIG)
