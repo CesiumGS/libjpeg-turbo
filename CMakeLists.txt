@@ -713,6 +713,7 @@ if(WITH_TURBOJPEG)
       rdppm.c wrbmp.c wrppm.c)
     set_property(TARGET turbojpeg-static PROPERTY COMPILE_FLAGS
       "-DBMP_SUPPORTED -DPPM_SUPPORTED")
+    set_target_properties(turbojpeg-static PROPERTIES XCODE_ATTRIBUTE_ENABLE_BITCODE "YES")
     #if(NOT MSVC)
     set_target_properties(turbojpeg-static PROPERTIES OUTPUT_NAME turbojpeg)
     #endif()
